@@ -2,7 +2,6 @@ import './App.css';
 import React,{useState} from 'react';
 
 import {List} from './Component/Movies.js';
-import MovieList from './Component/MovieList';
 import MovieCard from  './Component/MovieCard';
 import Filter from './Component/Filter.js';
 
@@ -21,15 +20,19 @@ function App() {
 
 
   return (
-    <div className="main-container">
+    <div className='container' >
           <div>
             <Filter handleSearch = {handleSearch}/>
           </div>
+          <div className='row mt-3'>
           {filterList.map( (movie) => {
             return <MovieCard movie ={movie}/>
           }
 
           )}
+          </div>
+          
+          
     </div>
   );
 }

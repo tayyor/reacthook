@@ -1,40 +1,24 @@
-import './App.css';
-import React,{useState} from 'react';
+import React from 'react';
+import {Switch , Route} from 'react-router-dom';
 
-import {List} from './Component/Movies.js';
-import MovieCard from  './Component/MovieCard';
-import Filter from './Component/Filter.js';
-
+import  MovieLibrary from './Component/movieLib.js';
+import Routing from './Component/Routing.js';
+import {List} from './Component/Movies';
 
 function App() {
-
-  const [searchMovie ,setSearchMovie] = useState('');
-
-  const handleSearch= (e) =>{
-    setSearchMovie (e.target.value);
-  }
-
-  const filterList = List.filter((movie)=>
-  movie.title.toLowerCase().includes(searchMovie.toLowerCase())
-  );
-
-
   return (
-    <div className='container' >
-          <div>
-            <Filter handleSearch = {handleSearch}/>
-          </div>
-          <div className='row mt-3'>
-          {filterList.map( (movie) => {
-            return <MovieCard movie ={movie}/>
-          }
-
-          )}
-          </div>
-          
-          
+    <div>
+    
+        <Switch>
+          <Route exact path="/" component={MovieLibrary} />
+          <Route
+            exact
+            path="/routing/:id"
+            component={Routing}
+          />
+        </Switch>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

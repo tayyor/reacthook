@@ -27,4 +27,11 @@ export const List = [
     description: ` Following the deadly events at home, the Abbot family continue their fight for survival in silence, now facing the terrors of the outside world in this suspensful thriller `,
     rating: 1,
   },
+  {
+    id: 4,
+    title: `Anna`,
+    posterUrl: `https://m.media-amazon.com/images/I/81b84hEiLJL._AC_UY218_.jpg`,
+    description: ` A beautiful young woman is recruited by the KGB in the early 1990s and trained to be an assassin whiile posing as a fashion model`,
+    rating: 1,
+  },
 ];
